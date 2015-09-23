@@ -39,7 +39,7 @@ struct ForecastService {
             }
             
         } else {
-            println("Could not construct valid URL")
+            println("Could not construct valid URL!")
         }
     }
     
