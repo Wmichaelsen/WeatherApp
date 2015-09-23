@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,115 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLN-8d-bC7">
+                                <rect key="frame" x="134" y="209" width="333" height="182"/>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="160"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HUMIDITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOc-ec-Hu6">
+                                <rect key="frame" x="190" y="399" width="77" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RAIN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLv-Gs-UtR">
+                                <rect key="frame" x="360" y="399" width="38" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVb-hh-NQs">
+                                <rect key="frame" x="207" y="427" width="32" height="30"/>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFz-nG-3cm">
+                                <rect key="frame" x="358" y="427" width="32" height="30"/>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="52X-nS-I4D">
+                                <rect key="frame" x="230" y="133" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Hnx-do-Tca"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="Ojf-lb-MLP"/>
+                                    <constraint firstAttribute="width" constant="140" id="dY0-hf-i0h"/>
+                                    <constraint firstAttribute="height" constant="30" id="eiL-ae-ebq"/>
+                                </constraints>
+                                <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="lngChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="xu4-Dd-d4P"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ffs-Ze-5NB">
+                                <rect key="frame" x="230" y="63" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FXV-vI-BEb"/>
+                                    <constraint firstAttribute="width" constant="140" id="TuY-II-Ofx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="u6j-WP-iXs"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="xSU-Du-QPv"/>
+                                </constraints>
+                                <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="latChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="mCa-yp-5Bj"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WS-Up-TEh">
+                                <rect key="frame" x="247" y="178" width="107" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="Q2I-PF-y6s"/>
+                                    <constraint firstAttribute="height" constant="37" id="b0F-EI-AF7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="22"/>
+                                <state key="normal" title="Get forecast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getForecastAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JXR-9i-bt9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jLN-8d-bC7" firstAttribute="top" secondItem="5WS-Up-TEh" secondAttribute="bottom" constant="-6" id="ATw-Rf-GyP"/>
+                            <constraint firstItem="oFz-nG-3cm" firstAttribute="top" secondItem="NLv-Gs-UtR" secondAttribute="bottom" constant="8" id="Cga-mQ-0ux"/>
+                            <constraint firstItem="5WS-Up-TEh" firstAttribute="top" secondItem="52X-nS-I4D" secondAttribute="bottom" constant="15" id="EnI-Wh-S4w"/>
+                            <constraint firstItem="MOc-ec-Hu6" firstAttribute="top" secondItem="jLN-8d-bC7" secondAttribute="bottom" constant="8" id="Fpp-NU-ZoB"/>
+                            <constraint firstItem="52X-nS-I4D" firstAttribute="top" secondItem="ffs-Ze-5NB" secondAttribute="bottom" constant="40" id="G5P-fS-mdn"/>
+                            <constraint firstItem="NLv-Gs-UtR" firstAttribute="top" secondItem="jLN-8d-bC7" secondAttribute="bottom" constant="8" id="Jh6-7C-NI9"/>
+                            <constraint firstItem="oFz-nG-3cm" firstAttribute="centerX" secondItem="NLv-Gs-UtR" secondAttribute="centerX" constant="0.5" id="MrE-zS-TLI"/>
+                            <constraint firstAttribute="centerX" secondItem="ffs-Ze-5NB" secondAttribute="centerX" id="RvJ-d5-gGU"/>
+                            <constraint firstAttribute="centerX" secondItem="ffs-Ze-5NB" secondAttribute="centerX" id="Uso-w8-cPo"/>
+                            <constraint firstItem="jLN-8d-bC7" firstAttribute="top" secondItem="52X-nS-I4D" secondAttribute="bottom" constant="46" id="YgY-YS-Wxl"/>
+                            <constraint firstAttribute="centerX" secondItem="MOc-ec-Hu6" secondAttribute="centerX" constant="72" id="aeT-7a-Go7"/>
+                            <constraint firstItem="PVb-hh-NQs" firstAttribute="centerX" secondItem="MOc-ec-Hu6" secondAttribute="centerX" id="gIo-sU-zbc"/>
+                            <constraint firstAttribute="centerY" secondItem="jLN-8d-bC7" secondAttribute="centerY" id="glK-vq-kdr"/>
+                            <constraint firstAttribute="centerX" secondItem="NLv-Gs-UtR" secondAttribute="centerX" constant="-79" id="qen-S5-xhz"/>
+                            <constraint firstAttribute="centerX" secondItem="5WS-Up-TEh" secondAttribute="centerX" constant="-0.5" id="uze-Gn-8hY"/>
+                            <constraint firstAttribute="centerX" secondItem="jLN-8d-bC7" secondAttribute="centerX" id="wKS-CH-YSQ"/>
+                            <constraint firstAttribute="centerX" secondItem="52X-nS-I4D" secondAttribute="centerX" id="xwk-NZ-xeX"/>
+                            <constraint firstItem="PVb-hh-NQs" firstAttribute="top" secondItem="MOc-ec-Hu6" secondAttribute="bottom" constant="8" id="yd6-u0-HsR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="humidityLabel" destination="PVb-hh-NQs" id="EM9-bT-qef"/>
+                        <outlet property="latInput" destination="ffs-Ze-5NB" id="3HH-at-vG7"/>
+                        <outlet property="lngInput" destination="52X-nS-I4D" id="c1g-Yc-4ie"/>
+                        <outlet property="rainLabel" destination="oFz-nG-3cm" id="F95-UT-StF"/>
+                        <outlet property="temperatureLabel" destination="jLN-8d-bC7" id="poz-7B-pv6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="392"/>
         </scene>
     </scenes>
 </document>
