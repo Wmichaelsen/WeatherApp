@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		263CF6C31BB32A2300AA84B9 /* ErrorCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 263CF6C21BB32A2300AA84B9 /* ErrorCodes.plist */; };
+		263CF6CC1BBC841200AA84B9 /* IMG_0319.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 263CF6CB1BBC841200AA84B9 /* IMG_0319.JPG */; };
 		26EB156D1B6A25EB0064221B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EB156C1B6A25EB0064221B /* AppDelegate.swift */; };
 		26EB156F1B6A25EB0064221B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EB156E1B6A25EB0064221B /* ViewController.swift */; };
 		26EB15721B6A25EB0064221B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26EB15701B6A25EB0064221B /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		263CF6C21BB32A2300AA84B9 /* ErrorCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ErrorCodes.plist; sourceTree = "<group>"; };
+		263CF6CB1BBC841200AA84B9 /* IMG_0319.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0319.JPG; sourceTree = "<group>"; };
 		26EB15671B6A25EB0064221B /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26EB156B1B6A25EB0064221B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26EB156C1B6A25EB0064221B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		26EB156A1B6A25EB0064221B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				263CF6CB1BBC841200AA84B9 /* IMG_0319.JPG */,
 				26EB156B1B6A25EB0064221B /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -207,6 +210,7 @@
 				26EB15721B6A25EB0064221B /* Main.storyboard in Resources */,
 				26EB15771B6A25EB0064221B /* LaunchScreen.xib in Resources */,
 				263CF6C31BB32A2300AA84B9 /* ErrorCodes.plist in Resources */,
+				263CF6CC1BBC841200AA84B9 /* IMG_0319.JPG in Resources */,
 				26EB15741B6A25EB0064221B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

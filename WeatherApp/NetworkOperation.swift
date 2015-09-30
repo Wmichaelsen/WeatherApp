@@ -31,7 +31,7 @@ class NetworkOperation {
         // Does the actual request (trailing completion closure)
         let dataTask = session.dataTaskWithRequest(request) {
             (let data, let response, let error) in // Values passed in by dataTaskWithRequest function
-                        
+            
             // Check response if any
             if let httpResponse = response as? NSHTTPURLResponse {
                 
@@ -43,9 +43,6 @@ class NetworkOperation {
                     
                     // Callback to completion closure (JSONDictionaryCompletion) passing fetched json in Dictionary
                     completion(jsonDictionary, status: 200, error: error)
-                // Status bad coordinates
-                case 400:
-                    completion(nil, status: 400, error: error)
                     
                 default:
                     println("Error: GET failed")

@@ -15,7 +15,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var humidityLabel: UILabel?
     @IBOutlet weak var rainLabel: UILabel?
     @IBOutlet weak var latInput: UITextField!
-    @IBOutlet weak var lngInput: UITextField!
+    @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var min_tempLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
     
     // Properties
     let forecastService = ForecastService(apiKey: "a45693d7bd4dd291e8d339b92f17bbc8")
@@ -27,11 +31,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         latInput.delegate = self
-        lngInput.delegate = self
         
+        scrollView!.contentSize = CGSizeMake(self.view.frame.size.width, 2000.0)
     }
-    
-    
+
     
 
     override func didReceiveMemoryWarning() {
@@ -51,10 +54,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         
         // Validates user input
-        if latInput.text != "" && lngInput.text != "" {
+        if latInput.text != "" {
             
             // Get forecast for lat and long. Forecast dictionary comes in currentWeather (closure)
-            forecastService.getForecast(lat,long: lng) {
+            forecastService.getForecast(latInput!.text) {
                 (let currentWeather, let status, let error) in
                 
                 // Perform on Main Thread
@@ -66,9 +69,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     // Status everythings fine
                     if status == 200 {
                         
+                
+                        // If CurrentWeather passed in is not nil
                         if let weatherDictionary = currentWeather as CurrentWeather? {
-                            println(currentWeather!.temperature)
-                            self.updateLabels(currentWeather!.temperature, hum: currentWeather!.humidity, prec: 0)
+                            
+                            // Update labels
+                            self.updateLabels(currentWeather!.temperature, hum: currentWeather!.humidity, prec: 0, pressure: currentWeather!.pressure, temp_min: currentWeather!.temp_min)
+                            
+                            // Scroll user to results
+                            self.scrollView!.setContentOffset(CGPointMake(0.0, self.view.frame.size.height), animated: true)
+                            
                         } else {
                             if let errorMessage = error as NSError? {
                                 self.alertUser("Oops", message: "Couldn't find location. Error message: \(errorMessage.description)")
@@ -77,14 +87,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             }
                             
                         }
-                    }
-                    
-                        
-                    // Status bad coordinates
-                    else if status == 400 {
+                    } else {
                         
                         // Alert user
-                        self.alertUser("Oops", message: "Seems like you entered nonvalid coordinates")
+                        self.alertUser("Oops", message: "HTTP response error code: \(status)")
                     }
                 }
             }
@@ -107,10 +113,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Private helper methods
     
-    private func updateLabels(temp: Int, hum: Int, prec: Int) {
-        temperatureLabel!.text = "\(temp-272)°C"
-        humidityLabel!.text = "\(hum)%"
-        rainLabel!.text = "\(prec)%"
+    private func updateLabels(temp: Int, hum: Int, prec: Int, pressure: Int, temp_min: Int) {
+        temperatureLabel!.text = "\(temp-273)°C"
+        humidityLabel!.text = "\(hum)"
+        rainLabel!.text = "\(prec)"
+        pressureLabel!.text = "\(pressure)"
+        min_tempLabel!.text = "\(temp_min-273)"
+        
     }
     
     private func alertUser(title: String, message: String) {
@@ -120,13 +129,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    // MARK: UITextField Delegate methods
+    // MARK: IBActions
     
     @IBAction func latChanged(sender: AnyObject) {
         lat = NSString(string: latInput.text).doubleValue
     }
     
-    @IBAction func lngChanged(sender: AnyObject) {
-        lng = NSString(string: lngInput.text).doubleValue
+    @IBAction func backButtonTapped(sender: AnyObject) {
+        scrollView!.setContentOffset(CGPointMake(0.0, 0.0), animated:true)
     }
+    
+    
 }

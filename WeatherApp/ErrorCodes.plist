@@ -2,7 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>2</key>
+	<string>Could not construct valid URL - ForecastService.swift</string>
 	<key>1</key>
-	<string>Couldn&apos;t convert JSON to Dictionary (often because location wasn&apos;t found)</string>
+	<string>Couldn&apos;t convert JSON to Dictionary (often because location wasn&apos;t found) - ForecastService.swift</string>
 </dict>
 </plist>
